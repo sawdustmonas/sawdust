@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+      .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999; /* Menetapkan z-index agar navbar selalu berada di atas konten */
+      }
+
+      .main-content {
+      margin-top: 60px; /* Sesuaikan dengan tinggi navbar */
+      }
+
+      .navbar-brand .brand-text {
+      color: gray;
+      transition: color 0.3s ease-in-out;
+      }
+
+      .navbar-brand:hover .brand-text,
+      .navbar-brand:focus .brand-text,
+      .navbar-brand:active .brand-text {
+      color: red !important;
+      font-size: 1.1em;
+      }
+      .navbar-brand {
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+      }
+
+      .navbar-brand img {
+          margin-right: 30px;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link:focus,
+      .navbar-nav .nav-link:active {
+          color: red;
+      }
+      
+      .navbar-nav .nav-link,
+      .dropdown-menu .dropdown-item {
+          color: gray;
+      }
+      
+      .navbar-nav .nav-item:hover .nav-link,
+      .navbar-nav .nav-item:focus .nav-link,
+      .navbar-nav .nav-item:active .nav-link,
+      .navbar-nav .nav-item.dropdown:hover .nav-link,
+      .navbar-nav .nav-item.dropdown:focus .nav-link,
+      .navbar-nav .nav-item.dropdown:active .nav-link {
+          color: red;
+          transition: color 0.3s ease-in-out, transform 0.1s ease-in-out;
+      }
+
+      .dropdown-toggle,
+      .dropdown-item {
+      font-weight: bold;
+      }
+      .nav-link {
+      font-weight: bold;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link:focus,
+      .navbar-nav .nav-link:active,
+      .dropdown-menu .dropdown-item:hover,
+      .dropdown-menu .dropdown-item:focus,
+      .dropdown-menu .dropdown-item:active {
+          color: red;
+          padding: 5px 10px;
+
+      }
+
+      .banner-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      text-align: center;
+      }
+
+      .banner {
+      max-width: 468px;
+      width: 100%;
+      }
+
+      img {
+      width: 50px;
+      height: 50px;
+      }
+
+ 
+  </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const dropdownItems = document.querySelectorAll('.dropdown-item');
+      dropdownItems.forEach(function(item) {
+          item.addEventListener('click', function() {
+              dropdownItems.forEach(function(item) {
+                  item.classList.remove('active');
+              });
+              this.classList.add('active');
+          });
+      });
+      
+      const actionItem = document.querySelector('.dropdown-item[href="#"]');
+      actionItem.addEventListener('click', function() {
+          this.classList.toggle('active');
+      });
+  });
+
+  function refreshBanner() {
+    var bannerLeft = document.getElementById("banner-left");
+    var bannerRight = document.getElementById("banner-right");
+
+    bannerLeft.innerHTML = '';
+    bannerRight.innerHTML = '';
+
+    // Menggunakan kode JavaScript iklan yang sama seperti sebelumnya
+    // Gantikan bagian ini dengan kode iklan yang Anda gunakan
+
+    // Menjalankan ulang fungsi refreshBanner setelah 15 detik
+    setTimeout(refreshBanner, 15000);
+  }
+
+  // Memulai pertama kali refreshBanner
+  refreshBanner();
+
+</script>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+        <a class="navbar-brand" href="#">
+          <img src="Assets/LOGO SERBUK850x50.png" alt="Logo" width="50" height="50">
+            <span class="brand-text" style="font-weight: bold;">
+              <span style="color: #808080;">SAWDUST</span>
+              <span style="color: #000000;">MONAS</span>
+            </span>          
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="home.html">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Tentang Kami
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="informasi.html">Informasi Perusahaan</a></li>
+                    <li><a class="dropdown-item" href="struktur.html">Struktur Perusahaan</a></li>                      
+                    <li><a class="dropdown-item" href="profil.html">Profil SDM</a></li>
+                </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produk Kami
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="serbukbasah.html">Serbuk Basah</a></li>
+                        <li><a class="dropdown-item" href="serbukkering.html">Serbuk Kering</a></li>
+                        <li><a class="dropdown-item" href="serbuk campur.html">Serbuk Campur</a></li>
+                        <li><a class="dropdown-item" href="Wood Pellets.html">Wood Pellets</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="harga.html">Harga</a>
+                  </li>
+              
+                  <li class="nav-item">
+                    <a class="nav-link" href="kegiatan.html">Kegiatan Operasional Perusahaan</a>
+                  </li>
+  
+                  <li class="nav-item">
+                      <a class="nav-link" href="hubungi.html">Hubungi Kami</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  
+<!--BANNER-->
+<div style="text-align:center; background-image:url(Assets/Kayu.jpg); background-size:cover; height:550px;">
+  <div style="background-color:rgba(0,0,0,0.5); height:100%;">
+    <h1 style="color:white; padding-top:175px;"><strong>Selamat Datang di Website Kami</strong></h1>          
+    <h2 style="color:white; padding-top:20px;">Halo Partner!</h2>
+    <a href="official address.html" style="display:inline-block; background-color:#9e0000; color:rgb(250, 250, 250); padding:10px 30px; margin-top:30px; text-decoration:none; border-radius:35px;">OFFICE ADDRESS :</a>
+  </div>
+</div>
+
+<div class="container main-content">
+  <h3 class="text-center mt-4">Profil SDM</h3>
+  <div class="row mt-4">
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="circle-img">
+              <img src="path_to_image_ceo" class="profile-img" alt="CEO">
+          </div>
+          <p class="text-center"><b>Bekti Nur Ivan</b></p>
+          <p class="text-center">CEO (Chief Executive Officer)</p>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="circle-img">
+              <img src="path_to_image_production_manager" class="profile-img" alt="Production Manager">
+          </div>
+          <p class="text-center"><b>Dede Prasetyagara</b></p>
+          <p class="text-center">CEO (Chief Executive Officer) Manajer Produksi</p>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="circle-img">
+              <img src="path_to_image_operations_manager" class="profile-img" alt="Operations Manager">
+          </div>
+          <p class="text-center"><b>Jajang Bavink</b></p>
+          <p class="text-center">CEO (Chief Executive Officer) Manajer Operasional</p>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="circle-img">
+              <img src="path_to_image_hr_manager" class="profile-img" alt="HR Manager">
+          </div>
+          <p class="text-center"><b>xXXx</b></p>
+          <p class="text-center">Manajer Sumber Daya Manusia (SDM)</p>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="circle-img">
+              <img src="path_to_image_hr_manager" class="profile-img" alt="HR Manager">
+          </div>
+          <p class="text-center"><b>xXXx</b></p>
+          <p class="text-center">Manajer SDM</p>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+          <div class="circle-img">
+              <img src="path_to_image_finance_manager" class="profile-img" alt="Finance Manager">
+          </div>
+          <p class="text-center"><b>xXXx</b></p> 
+          <p class="text-center">Manajer Keuangan</p>
+      </div>
+  </div>
+</div>
+
+  <footer style="background-color: #9e0000; color: white; text-align: center; padding: 1px 0;">
+    <p style="text-align: center;" class="footer">Copyright &copy; SAWDUST MONAS</p>
+  </footer>
+
+<!--IKLAN-->
+<div class="banner-container">
+  <div class="banner banner-left">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '1258404b41e9f3a0946b9bda84cf1b70',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/1258404b41e9f3a0946b9bda84cf1b70/invoke.js"></scr' + 'ipt>');
+    </script>
+  </div>
+  <div class="banner banner-right">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '1258404b41e9f3a0946b9bda84cf1b70',
+        'format' : 'iframe',
+        'height' : 60,
+        'width' : 468,
+        'params' : {}
+      };
+      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/1258404b41e9f3a0946b9bda84cf1b70/invoke.js"></scr' + 'ipt>');
+    </script>
+  </div>
+</div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
